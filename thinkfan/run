@@ -1,0 +1,3 @@
+#!/bin/sh
+[ -r conf ] && . ./conf
+exec thinkfan -n ${OPTS:-} 2>&1
