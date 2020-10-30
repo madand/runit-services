@@ -1,2 +1,10 @@
 #!/bin/sh
-exec svlogd -tt /var/log/psd
+set -e
+
+log_dir='/var/log/psd'
+
+if [ -d "${log_dir}" ]; then
+    exec svlogd -tt "${log_dir}"
+else
+    exec chpst -b psd-log-null cat >/dev/null
+fi
