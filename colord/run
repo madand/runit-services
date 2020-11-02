@@ -1,0 +1,9 @@
+#!/bin/sh
+set -e
+
+if [ ! -d /var/lib/colord ]; then
+    mkdir -p /var/lib/colord
+    chown -R colord:colord /var/lib/colord
+fi
+
+exec chpst -u colord /usr/lib/colord 2>&1
