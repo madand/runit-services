@@ -1,0 +1,11 @@
+# -*- mode: sh; -*-
+
+# Additional command line arguments for colord(1).
+OPTS=''
+# colord runtime directory.
+RUNTIME_DIR='/var/lib/colord'
+
+# Setting this to 1 enables logging, any other value - disables.
+LOGGING_ENABLE=1
+# The directory will be created for you, if logging is enabled.
+LOG_DIR='/var/log/colord'

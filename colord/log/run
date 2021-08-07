@@ -1,11 +1,12 @@
 #!/bin/sh
 
-# If you want the logging enabled, create the log directory:
-# > mkdir -p /var/log/colord
-log_dir='/var/log/colord'
+[ -r ../conf ] && . ../conf
 
-if [ -d "${log_dir}" ]; then
-    exec svlogd -tt "${log_dir}"
+if [ "${LOGGING_ENABLE}x" == "1x" ]; then
+    # Create the log directory if not exists.
+    [ -d "${LOG_DIR}" ] || mkdir -p "${LOG_DIR}"
+
+    exec svlogd -tt "${LOG_DIR}"
 else
     exec chpst -b colord-log-null cat >/dev/null
 fi
