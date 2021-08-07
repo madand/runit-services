@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 if [ ! -d /var/lib/colord ]; then
     mkdir -p /var/lib/colord

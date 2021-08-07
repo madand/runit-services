@@ -1,5 +1,4 @@
 #!/bin/sh
-set -e
 
 # If you want the logging enabled, create the log directory:
 # > mkdir -p /var/log/thinkfan

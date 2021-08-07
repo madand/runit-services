@@ -1,4 +1,4 @@
 #!/bin/sh
-set -e
+
 psd sync
 exec chpst -b psd pause
