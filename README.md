@@ -30,6 +30,42 @@ Works only with PSD v5.x, since v6+ they went systemd-only way.
 [thinkfan](https://github.com/vmatare/thinkfan): the minimalist fan control
 program.
 
+### pipewire
+
+[PipeWire](https://pipewire.org/) is a project that aims to greatly improve
+handling of audio and video under Linux.
+
+Note that the PipeWire services are supposed to be run with a user session.
+Moreover, they form a startup dependency chain (`pipewire` ->
+`pipewire-media-session` -> `pipewire-pulse`). So if you want to use
+`pipewire-pulse`, make sure that the other two are also installed and enabled.
+
+The `pipewire-*/run` scripts assume a certain directory structure for checking
+dependency. If you store your local services under a different directory, you
+need to modify the `sv check` line in `pipewire-media-session/run` and
+`pipewire-pulse/run` accordingly.
+
+#### Installation as local services
+
+``` shell
+mkdir -p ~/.runit/{sv,runsvdir}
+cp -r /path/to/cloned/services/pipewire{,-media-session,-pulse} ~/.runit/sv
+# Enable the services
+cd ~/.runit/runsvdir
+ln -s ../pipewire
+ln -s ../pipewire-media-session
+ln -s ../pipewire-pulse
+```
+
+Finally, use `runsvdir` to start the services:
+``` shell
+runsvdir ~/.runit/runsvdir
+```
+In order to start the services automatically upon login, you may want to add
+the previous command to your `~/.xinitrc` or create a corresponding `.desktop`
+file in `~/.config/autostart/`.
+
+
 License
 -------
 

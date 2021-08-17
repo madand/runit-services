@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Wait for the PipeWire Media Session daemon to start.
+sv check "$HOME/.runit/sv/pipewire-media-session" >/dev/null || exit 1
+
+[ -r ./conf ] && . ./conf
+
+if [ "${LOGGING_ENABLE}x" == "1x" -a -n "${LOG_LEVEL}" ]; then
+    export PIPEWIRE_DEBUG="${LOG_LEVEL}"
+fi
+
+exec pipewire-pulse ${OPTS:-} 2>&1

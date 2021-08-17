@@ -1,0 +1,9 @@
+#!/bin/sh
+
+[ -r ./conf ] && . ./conf
+
+if [ "${LOGGING_ENABLE}x" == "1x" -a -n "${LOG_LEVEL}" ]; then
+    export PIPEWIRE_DEBUG="${LOG_LEVEL}"
+fi
+
+exec pipewire ${OPTS:-} 2>&1
