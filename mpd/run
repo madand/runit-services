@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Wait for the PipeWire Pulse daemon to start.
+sv check "$HOME/.runit/sv/pipewire-pulse" >/dev/null || exit 1
+
+[ -r ./conf ] && . ./conf
+
+exec mpd --no-daemon --stderr ${OPTS:-} 2>&1
