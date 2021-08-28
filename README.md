@@ -35,7 +35,17 @@ program.
 [Music Player Daemon](https://github.com/MusicPlayerDaemon/MPD): a daemon for
 playing music of various formats.
 
-mpd service is supposed to be run with a user session. For more info on
+`mpd` service is supposed to be run with a user session. For more info on
+how to set up user services see [Installation as local services](#installation-as-local-services) 
+in `pipewire` service notes.
+
+### redshift
+
+[Redshift](https://github.com/jonls/redshift) adjusts the color temperature of
+your screen according to your surroundings. This may help your eyes hurt less if
+you are working in front of the screen at night.
+
+`redshift` service is supposed to be run with a user session. For more info on
 how to set up user services see [Installation as local services](#installation-as-local-services) 
 in `pipewire` service notes.
 
@@ -44,7 +54,7 @@ in `pipewire` service notes.
 [Syncthing](https://github.com/syncthing/syncthing) is a continuous file
 synchronization program.
 
-Syncthing service is supposed to be run with a user session. For more info on
+`syncthing` service is supposed to be run with a user session. For more info on
 how to set up user services see [Installation as local services](#installation-as-local-services) 
 in `pipewire` service notes.
 
@@ -53,7 +63,7 @@ in `pipewire` service notes.
 [picom](https://github.com/yshui/picom) is a compositor for X, and a fork of
 Compton.
 
-picom service is supposed to be run with a user session. For more info on
+`picom` service is supposed to be run with a user session. For more info on
 how to set up user services see [Installation as local services](#installation-as-local-services) 
 in `pipewire` service notes.
 
