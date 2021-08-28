@@ -30,6 +30,15 @@ Works only with PSD v5.x, since v6+ they went systemd-only way.
 [thinkfan](https://github.com/vmatare/thinkfan): the minimalist fan control
 program.
 
+### syncthing
+
+[Syncthing](https://github.com/syncthing/syncthing) is a continuous file
+synchronization program.
+
+Syncthing service is supposed to be run with a user session. For more info on
+how to set up user services see [Installation as local services](#installation-as-local-services) 
+in pipewire service notes.
+
 ### pipewire
 
 [PipeWire](https://pipewire.org/) is a project that aims to greatly improve
