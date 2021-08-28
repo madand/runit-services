@@ -1,0 +1,12 @@
+#!/bin/sh
+
+[ -r ../conf ] && . ../conf
+
+if [ "${LOGGING_ENABLE}x" = "1x" ]; then
+    # Create the log directory if not exists.
+    [ -d "${LOG_DIR}" ] || mkdir -p "${LOG_DIR}"
+
+    exec svlogd -tt "${LOG_DIR}"
+else
+    exec chpst -b picom-log-null cat >/dev/null
+fi

@@ -1,0 +1,11 @@
+# -*- mode: sh; -*-
+
+# Picom is a fork of Compton: https://github.com/yshui/picom/
+
+# Additional command line arguments for picom(1).
+OPTS='--dbus'
+
+# Setting this to 1 enables logging, any other value - disables.
+LOGGING_ENABLE=0
+# The directory will be created for you, if logging is enabled.
+LOG_DIR="$HOME/var/log/picom"

@@ -39,6 +39,15 @@ Syncthing service is supposed to be run with a user session. For more info on
 how to set up user services see [Installation as local services](#installation-as-local-services) 
 in pipewire service notes.
 
+### picom
+
+[picom](https://github.com/yshui/picom) is a compositor for X, and a fork of
+Compton.
+
+picom service is supposed to be run with a user session. For more info on
+how to set up user services see [Installation as local services](#installation-as-local-services) 
+in pipewire service notes.
+
 ### pipewire
 
 [PipeWire](https://pipewire.org/) is a project that aims to greatly improve
