@@ -2,7 +2,7 @@ runit-services
 ==============
 
 Collection of [runit](http://smarden.org/runit/) service scripts missing from
-the Arch Linux repos.
+the ~~Arch~~ [Artix Linux](https://artixlinux.org/) repos.
 
 Services
 --------
