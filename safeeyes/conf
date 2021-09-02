@@ -1,0 +1,10 @@
+# -*- mode: sh; -*-
+
+# Additional command line arguments for safeeyes(1).
+# See: safeeyes -h
+OPTS=''
+
+# Setting this to 1 enables logging, any other value - disables.
+LOGGING_ENABLE=0
+# The directory will be created for you, if logging is enabled.
+LOG_DIR="$HOME/var/log/safeeyes"

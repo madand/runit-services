@@ -1,0 +1,5 @@
+#!/bin/sh
+
+[ -r ./conf ] && . ./conf
+
+exec safeeyes ${OPTS:-} 2>&1

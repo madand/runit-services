@@ -49,6 +49,16 @@ you are working in front of the screen at night.
 how to set up user services see [Installation as local services](#installation-as-local-services) 
 in `pipewire` service notes.
 
+### safeeyes
+
+[Safe Eyes](https://slgobinath.github.io/SafeEyes/) is a Free and Open
+Source tool for Linux users to reduce and prevent repetitive strain injury
+(RSI).
+
+`safeeyes` service is supposed to be run with a user X-session. For more info on
+how to set up user services see [Installation as local services](#installation-as-local-services) 
+in `pipewire` service notes.
+
 ### syncthing
 
 [Syncthing](https://github.com/syncthing/syncthing) is a continuous file
