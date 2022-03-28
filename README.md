@@ -54,7 +54,7 @@ path, namely `~/.runit/sv`. For more info see the section
 playing music of various formats.
 
 Note that the script `mpd/run` depends on `pipewire-pulse` service (see below).
-If you don't use PipeWire, you need to delete or comment out the line 
+If you don't use PipeWire, you need to delete or comment out the line
 `sv check ...`  in `mpd/run` file.
 
 ### redshift
@@ -78,6 +78,10 @@ synchronization program.
 
 [picom](https://github.com/yshui/picom) is a compositor for X, and a fork of
 Compton.
+
+### btpd
+[btpd](https://github.com/btpd/btpd) is a BitTorrent client
+for linux.
 
 ### pipewire
 
