@@ -1,0 +1,10 @@
+# -*- mode: sh; -*-
+
+# Additional command line arguments for btpd(1).
+OPTS=''
+
+# Setting this to 1 enables logging, any other value - disables.
+LOGGING_ENABLE=1
+
+# The directory will be created for you, if logging is enabled.
+LOG_DIR="$HOME/var/log/btpd"
