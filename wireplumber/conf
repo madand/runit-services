@@ -1,0 +1,12 @@
+# -*- mode: sh; -*-
+
+# Additional command line arguments for wireplumber.
+OPTS=''
+
+# Setting this to 1 enables logging, any other value - disables.
+LOGGING_ENABLE=0
+# Set the wireplumber log level.
+# See: https://pipewire.pages.freedesktop.org/wireplumber/daemon-logging.html
+LOG_LEVEL=2
+# The directory will be created for you, if logging is enabled.
+LOG_DIR="$HOME/var/log/wireplumber"

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Wait for the PipeWire daemon to start.
+sv check "$HOME/.runit/sv/pipewire" >/dev/null || exit 1
+
+[ -r ./conf ] && . ./conf
+
+if [ "${LOGGING_ENABLE}x" == "1x" -a -n "${LOG_LEVEL}" ]; then
+    export WIREPLUMBER_DEBUG="${LOG_LEVEL}"
+fi
+
+exec wireplumber ${OPTS:-} 2>&1

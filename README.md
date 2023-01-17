@@ -86,17 +86,17 @@ for linux.
 ### pipewire
 
 [PipeWire](https://pipewire.org/) is a project that aims to greatly improve
-handling of audio and video under Linux.
+handling of audio and video under Linux. [WirePlumber](https://pipewire.pages.freedesktop.org/wireplumber/) is a modular session / policy manager for PipeWire. `pipewire-pulse` is a drop-in replacement for the PulseAudio daemon.
 
 Note that the PipeWire services are supposed to be run with a user session.
 Moreover, they form a startup dependency chain (`pipewire` ->
-`pipewire-media-session` -> `pipewire-pulse`). So if you want to use
+`wireplumber` -> `pipewire-pulse`). So if you want to use
 `pipewire-pulse`, make sure that the other two are also installed and enabled.
 
-The `pipewire-*/run` scripts assume a certain directory structure for checking
-dependency. If you store your local services under a different directory, you
-need to modify the `sv check` line in `pipewire-media-session/run` and
-`pipewire-pulse/run` accordingly.
+The `pipewire-pulse/run` and `wireplumber/run` scripts assume certain directory
+structure for checking their dependency. If you store your local services under
+a different directory, you need to modify the `sv check` line in
+`wireplumber/run` and `pipewire-pulse/run` accordingly.
 
 See the next section for the details on how to install and activate the pipewire
 services.
@@ -110,10 +110,10 @@ Runit Tips & Tricks
 
 ``` shell
 mkdir -p ~/.runit/{sv,runsvdir}
-cp -r /path/to/cloned/services/pipewire{,-media-session,-pulse} ~/.runit/sv
+cp -r /path/to/cloned/services/{wireplumber,pipewire{,-pulse}} ~/.runit/sv
 # Enable the services
 ln -s ~/.runit/sv/pipewire ~/.runit/runsvdir/pipewire
-ln -s ~/.runit/sv/pipewire-media-session ~/.runit/runsvdir/pipewire-media-session
+ln -s ~/.runit/sv/wireplumber ~/.runit/runsvdir/wireplumber
 ln -s ~/.runit/sv/pipewire-pulse ~/.runit/runsvdir/pipewire-pulse
 ```
 
@@ -121,6 +121,7 @@ Finally, use `runsvdir` to start the services:
 ``` shell
 runsvdir ~/.runit/runsvdir
 ```
+
 In order to start the services automatically upon login, you may want to add
 the previous command to your `~/.xinitrc` or create a corresponding `.desktop`
 file in `~/.config/autostart/`.
